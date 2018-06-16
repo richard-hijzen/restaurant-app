@@ -3,15 +3,13 @@
  */
 
 if ('serviceWorker' in navigator) {
-  window.addEventListener('load', function() {
-    navigator.serviceWorker.register('js/sw.js').then(function(registration) {
+    navigator.serviceWorker.register('js/sw.js').then(function() {
       // Registration was successful
-      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+      console.log('ServiceWorker registration successful');
     }, function(err) {
       // registration failed :(
       console.log('ServiceWorker registration failed: ', err);
     });
-  });
 }
 
 /*  */
@@ -161,7 +159,7 @@ createRestaurantHTML = (restaurant) => {
   image.setAttribute("alt", restaurant.name);
   li.append(image);
 
-  const name = document.createElement('h1');
+  const name = document.createElement('h2');
   name.innerHTML = restaurant.name;
   li.append(name);
 
